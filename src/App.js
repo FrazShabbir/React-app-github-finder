@@ -1,19 +1,20 @@
-import logo from './logo.svg';
+// import logo from './logo.svg';
 import './App.css';
+import React, {Component} from 'react';
+import Navbar from './components/layouts/Navbar'
 
-function App() {
-  const name = 'Fraz Shabbir';
-  const msg = 'My name is fraz shabbir';
-  const msg2 = 'My name is fraz shabbir';
+class App extends Component{
 
-  return (
-    <div className="App">
-      <h1>hello! {name}</h1>
-      <p> {msg}</p>
-      <p> {msg2}</p>
-     
-    </div>
-  );
+  render(){
+   
+
+    return (
+      <div className="App">
+       < Navbar />
+       
+      </div>
+    );
+  }
 }
 
 export default App;
