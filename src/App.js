@@ -1,18 +1,21 @@
 // import logo from './logo.svg';
 import './App.css';
-import React, {Component} from 'react';
+import React, { Component } from 'react';
 import Navbar from './components/layouts/Navbar'
+import Users from './components/users/Users';
+class App extends Component {
 
-class App extends Component{
+  render() {
 
-  render(){
-   
 
     return (
       <div className="App">
-       < Navbar title='Github Finder' icon='fab fa-github'/ >
+        < Navbar title='Github Finder' icon='fab fa-github' />
+        <div className="container">
+        <Users />
+        </div>
+       
 
-         
       </div>
     );
   }
