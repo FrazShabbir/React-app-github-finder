@@ -18,8 +18,6 @@ export class Navbar extends Component {
                 <a class="navbar-brand" href="/">
                     
                         <i className={this.props.icon} ></i>&nbsp;&nbsp;{this.props.title}
-                    
-                    
                 </a>
             </nav>
         )
