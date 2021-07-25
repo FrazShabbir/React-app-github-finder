@@ -11,7 +11,7 @@ class App extends Component {
     return (
       <div className="App">
         < Navbar title='Github Finder' icon='fab fa-github' />
-        <div className="container">
+        <div className="container row">
         <Users />
         </div>
        

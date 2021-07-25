@@ -22,12 +22,14 @@ export class UserItem extends Component {
         const {login, avatar_url, html_url} = this.props.user;
         return (
             
+            <div className="col-lg-4">
             <div className='card text-center'>
                 <img src={avatar_url} alt={login} className='round-img' style={{width:'60px'}}/>
                 <h3>{login}</h3>
                 <div>
                     <a href={html_url} className='btn btn-dark btn-sm my-1' > More</a>
                 </div>
+            </div>
             </div>
         )
     }

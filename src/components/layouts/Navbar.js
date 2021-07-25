@@ -3,8 +3,8 @@ import PropTypes from 'prop-types'
 
 export class Navbar extends Component {
     static defaultProps = {
-        title:'Github Finder',
-        icon:'fab -fab-github'
+        title: 'Github Finder',
+        icon: 'fab -fab-github'
     };
 
     static propTypes = {
@@ -13,11 +13,13 @@ export class Navbar extends Component {
     };
     render() {
         return (
-            <nav className='navbar bg-primary'>
 
-                <h1>
-                    <i className={this.props.icon} ></i>{this.props.title}
-                </h1>
+            <nav className='navbar navbar-dark bg-danger'>
+                <a class="navbar-brand" href="/">
+                    
+                        <i className={this.props.icon} ></i>&nbsp;&nbsp;{this.props.title}
+                    
+                </a>
             </nav>
         )
     }
