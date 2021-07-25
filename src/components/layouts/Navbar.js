@@ -19,6 +19,7 @@ export class Navbar extends Component {
                     
                         <i className={this.props.icon} ></i>&nbsp;&nbsp;{this.props.title}
                     
+                    
                 </a>
             </nav>
         )
