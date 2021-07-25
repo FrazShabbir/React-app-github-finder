@@ -1,6 +1,8 @@
-import React, { Component } from 'react'
+import React  from 'react';
+import PropTypes from 'prop-types'
 
-export class UserItem extends Component {
+
+const UserItem = ({user: {login, avatar_url, html_url}}) =>{
 
         // we can get the same result without using constructor here
 
@@ -18,8 +20,7 @@ export class UserItem extends Component {
     //     html_url : 'https://github.com/FrazShabbir'
     // }
 
-    render() {
-        const {login, avatar_url, html_url} = this.props.user;
+   
         return (
             
             <div className="col-lg-4">
@@ -32,7 +33,12 @@ export class UserItem extends Component {
             </div>
             </div>
         )
-    }
+    
+
+};
+
+UserItem.prototype={
+user: PropTypes.object.isRequired
 }
 
 export default UserItem
