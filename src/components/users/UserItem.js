@@ -41,6 +41,4 @@ UserItem.prototype={
 user: PropTypes.object.isRequired
 }
 
-
-
 export default UserItem
