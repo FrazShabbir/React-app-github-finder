@@ -3,7 +3,13 @@ import './App.css';
 import React, { Component } from 'react';
 import Navbar from './components/layouts/Navbar'
 import Users from './components/users/Users';
+import axios from 'axios';
 class App extends Component {
+
+  componentDidMount() {
+    console.log(123);
+    axios.get('https://api.github.com/users');
+  }
 
   render() {
 
