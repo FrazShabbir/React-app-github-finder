@@ -42,4 +42,5 @@ user: PropTypes.object.isRequired
 }
 
 
+
 export default UserItem
