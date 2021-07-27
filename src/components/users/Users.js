@@ -1,4 +1,4 @@
-import React from 'react'
+import React,{Fragment} from 'react'
 import UserItem from './UserItem'
 import Spinner from '../layouts/Spinner'; 
 import PropTypes from 'prop-types'
@@ -8,11 +8,11 @@ const Users = ({users, loading})=> {
         return <Spinner />
     }else{
         return (
-            <>
+            <Fragment>
                 {users.map(user => (
                     <UserItem key={user.id} user={user} />
                 ))}
-            </>
+            </Fragment>
         )
     }
 
