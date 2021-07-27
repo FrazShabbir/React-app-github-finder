@@ -7,7 +7,7 @@ const Navbar = ({icon,title}) => {
     return (
 
         <nav className='navbar navbar-dark bg-danger'>
-            <a class="navbar-brand" href="/">
+            <a className="navbar-brand" href="/">
                 <i className={icon} ></i>&nbsp;&nbsp;{title}
             </a>
         </nav>
