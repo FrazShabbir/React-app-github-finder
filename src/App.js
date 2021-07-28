@@ -6,6 +6,7 @@ import Users from './components/users/Users';
 import Search from './components/users/Search';
 import axios from 'axios';
 import Footer from './components/layouts/Footer';
+import { Alert } from './components/layouts/Alert';
 const github = axios.create({
   baseURL: 'https://api.github.com',
   timeout: 1000,
@@ -16,13 +17,14 @@ class App extends Component {
 
   state = {
     users: [],
-    loading: false
+    loading: false,
+    alert: null
   }
-   async componentDidMount() {
+  async componentDidMount() {
 
-     this.setState({ loading: true });
-     const res = await axios.get(`https://api.github.com/users?client_id=${process.env.REACT_APP_GITHUB_CLIENT_ID}&client_secret=${process.env.REACT_APP_GITHUB_CLIENT_SECRET}`);
-     this.setState({ users: res.data, loading: false });
+    this.setState({ loading: true });
+    const res = await axios.get(`https://api.github.com/users?client_id=${process.env.REACT_APP_GITHUB_CLIENT_ID}&client_secret=${process.env.REACT_APP_GITHUB_CLIENT_SECRET}`);
+    this.setState({ users: res.data, loading: false });
 
   }
   // Searching users
@@ -30,14 +32,19 @@ class App extends Component {
     this.setState({ loading: true });
     const res = await github.get(`/search/users?q=${text}`);
     this.setState({ users: res.data.items, loading: false });
-    };
+  };
 
   // Clear Users
-   clearUsers = ()=>{
-     this.setState({users:[],loading:false})
-   }
+  clearUsers = () => {
+    this.setState({ users: [], loading: false })
+  }
+  // Alert method
+  setAlert = (msg, type) => {
+    this.setState({ alert: { msg: msg, type: type } })
+    setTimeout(()=> this.setState({alert:null}),4000)
+  }
   render() {
-    const {users,loading}=this.state;
+    const { users, loading } = this.state;
     return (
       <div className="App">
         < Navbar title='Github Finder' icon='fab fa-github' />
@@ -45,7 +52,10 @@ class App extends Component {
         <div className="container">
           <div className="row">
             <div className="col-lg-12">
-              <Search searchUsers={this.searchUsers} clearUsers={this.clearUsers} clearShow={users.length>0?true:false} />
+              <div className="col-lg-12">
+                <Alert alert={this.state.alert} />
+              </div>
+              <Search searchUsers={this.searchUsers} clearUsers={this.clearUsers} clearShow={users.length > 0 ? true : false} setAlert={this.setAlert} />
             </div>
           </div>
         </div>
@@ -57,7 +67,7 @@ class App extends Component {
           </div>
         </div>
 
-<Footer/>
+        <Footer />
 
       </div>
     );
