@@ -5,7 +5,7 @@ import Navbar from './components/layouts/Navbar'
 import Users from './components/users/Users';
 import Search from './components/users/Search';
 import axios from 'axios';
-
+import Footer from './components/layouts/Footer';
 const github = axios.create({
   baseURL: 'https://api.github.com',
   timeout: 1000,
@@ -57,6 +57,7 @@ class App extends Component {
           </div>
         </div>
 
+<Footer/>
 
       </div>
     );
