@@ -15,11 +15,14 @@ const github = axios.create({
 
 class App extends Component {
 
+// setting default values in the state.
+
   state = {
     users: [],
     loading: false,
     alert: null
   }
+
   // it will put data in the start of the landing page
   async componentDidMount() {
     this.setState({ loading: true });
