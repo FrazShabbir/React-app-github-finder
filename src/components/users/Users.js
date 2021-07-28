@@ -1,12 +1,12 @@
-import React,{Fragment} from 'react'
+import React, { Fragment } from 'react'
 import UserItem from './UserItem'
-import Spinner from '../layouts/Spinner'; 
+import Spinner from '../layouts/Spinner';
 import PropTypes from 'prop-types'
 
-const Users = ({users, loading})=> {
-    if(loading){
+const Users = ({ users, loading }) => {
+    if (loading) {
         return <Spinner />
-    }else{
+    } else {
         return (
             <Fragment>
                 {users.map(user => (
@@ -17,8 +17,8 @@ const Users = ({users, loading})=> {
     }
 
 
-       
-    }
+
+}
 
 
 // const userStyle={
