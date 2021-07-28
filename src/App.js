@@ -38,13 +38,19 @@ class App extends Component {
   clearUsers = () => {
     this.setState({ users: [], loading: false })
   }
+
   // Alert method
   setAlert = (msg, type) => {
     this.setState({ alert: { msg: msg, type: type } })
     setTimeout(()=> this.setState({alert:null}),4000)
   }
+
   render() {
+
+
+    // declaring variables
     const { users, loading } = this.state;
+
     return (
       <div className="App">
         < Navbar title='Github Finder' icon='fab fa-github' />
