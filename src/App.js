@@ -1,12 +1,14 @@
 // import logo from './logo.svg';
 import './App.css';
 import React, { Component } from 'react';
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import Navbar from './components/layouts/Navbar'
 import Users from './components/users/Users';
 import Search from './components/users/Search';
 import axios from 'axios';
 import Footer from './components/layouts/Footer';
 import { Alert } from './components/layouts/Alert';
+
 const github = axios.create({
   baseURL: 'https://api.github.com',
   timeout: 1000,
@@ -15,7 +17,7 @@ const github = axios.create({
 
 class App extends Component {
 
-// setting default values in the state.
+  // setting default values in the state.
 
   state = {
     users: [],
@@ -45,7 +47,7 @@ class App extends Component {
   // Alert method
   setAlert = (msg, type) => {
     this.setState({ alert: { msg: msg, type: type } })
-    setTimeout(()=> this.setState({alert:null}),4000)
+    setTimeout(() => this.setState({ alert: null }), 5000)
   }
 
   render() {
@@ -55,30 +57,22 @@ class App extends Component {
     const { users, loading } = this.state;
 
     return (
-      <div className="App">
-        < Navbar title='Github Finder' icon='fab fa-github' />
+      <Router>
+        <div className="App">
+          < Navbar title='Github Finder' icon='fab fa-github' />
 
-        <div className="container">
-          <div className="row">
-            <div className="col-lg-12">
-              <div className="col-lg-12">
-                <Alert alert={this.state.alert} />
-              </div>
-              <Search searchUsers={this.searchUsers} clearUsers={this.clearUsers} clearShow={users.length > 0 ? true : false} setAlert={this.setAlert} />
-            </div>
-          </div>
+          <Alert alert={this.state.alert} />
+
+          <Search searchUsers={this.searchUsers} clearUsers={this.clearUsers} clearShow={users.length > 0 ? true : false} setAlert={this.setAlert} />
+          
+          <Users loading={loading} users={users} />
+
+
+
+          <Footer />
+
         </div>
-
-        <div className="container">
-          <div className="row">
-            <Users loading={loading} users={users} />
-
-          </div>
-        </div>
-
-        <Footer />
-
-      </div>
+      </Router>
     );
   }
 }

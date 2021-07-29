@@ -13,7 +13,7 @@ export class Footer extends Component {
                                 <h5 className="mb-1">Register for free</h5>
                             </li>
                             <li className="list-inline-item">
-                                <a href="#!" className="btn btn-outline-white btn-rounded">Sign up!</a>
+                                <a href="https://github.com/login" className="btn btn-outline-white btn-rounded">Sign up!</a>
                             </li>
                         </ul>
 
@@ -24,8 +24,6 @@ export class Footer extends Component {
                     </div>
 
                 </footer>
-
-
             </div>
         )
     }

@@ -8,10 +8,14 @@ const Users = ({ users, loading }) => {
         return <Spinner />
     } else {
         return (
+
             <Fragment>
-                {users.map(user => (
-                    <UserItem key={user.id} user={user} />
-                ))}
+                <div className="container">
+                    <div className="row">
+                        {users.map(user => (
+                            <UserItem key={user.id} user={user} />
+                        ))}
+                    </div></div>
             </Fragment>
         )
     }

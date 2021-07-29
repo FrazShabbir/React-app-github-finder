@@ -1,4 +1,4 @@
-import React, { Component } from 'react'
+import React, { Component, Fragment } from 'react'
 import PropTypes from 'prop-types'
 
 export class Search extends Component {
@@ -30,19 +30,25 @@ export class Search extends Component {
     render() {
         const { clearUsers, clearShow } = this.props;
         return (
-            <div>
-                <form onSubmit={this.onSubmit} className='form'>
-                    <div className="form-group">
-                        <input type="text" name="text" placeholder="Serach User.." className="form-control" value={this.state.text} onChange={this.onchange} />
-                        <input type="submit" value="Search" className="btn btn-dark btn-block" />
+            <Fragment>
+
+                <div className="container">
+                    <div className="row">
+                        <div className="col-lg-12">
+                            <form onSubmit={this.onSubmit} className='form'>
+                                <div className="form-group">
+                                    <input type="text" name="text" placeholder="Serach User.." className="form-control" value={this.state.text} onChange={this.onchange} />
+                                    <input type="submit" value="Search" className="btn btn-dark btn-block" />
+                                </div>
+                            </form>
+                            {clearShow && <button className="btn btn-danger btn-block" onClick={clearUsers} >Clear</button>
+                            }
+
+                        </div>
                     </div>
-                </form>
-                {clearShow && <button className="btn btn-danger btn-block" onClick={clearUsers} >Clear</button>
-                }
+                </div>
 
-
-
-            </div>
+            </Fragment>
         )
     }
 }
