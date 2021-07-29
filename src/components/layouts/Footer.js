@@ -25,7 +25,6 @@ export class Footer extends Component {
 
                 </footer>
 
-                
             </div>
         )
     }
