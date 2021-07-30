@@ -22,7 +22,7 @@ class App extends Component {
 
   state = {
     users: [],
-    user:{},
+    user: {},
     loading: false,
     alert: null
   }
@@ -52,7 +52,7 @@ class App extends Component {
     setTimeout(() => this.setState({ alert: null }), 5000)
   }
   // Get Single user Data
-  getUser = async (username)=>{
+  getUser = async (username) => {
     this.setState({ loading: true });
     const res = await github.get(`/users/${username}`);
     this.setState({ user: res.data, loading: false });
@@ -62,7 +62,7 @@ class App extends Component {
 
 
     // declaring variables
-    const { users,user, loading } = this.state;
+    const { users, user, loading } = this.state;
 
     return (
       <Router>
@@ -90,10 +90,10 @@ class App extends Component {
             )} />
 
             <Route exact path='/user/:login' render={
-              props=>(
-                <User {...props} getUser={this.getUser} user={user} loading = {loading}/>
+              props => (
+                <User {...props} getUser={this.getUser} user={user} loading={loading} />
               )
-            }/>
+            } />
           </Switch>
 
 

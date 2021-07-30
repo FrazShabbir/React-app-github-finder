@@ -7,10 +7,11 @@ export class User extends Component {
     }
     render() {
         const {
+            id,
             name,
             avatar_url,
             location,
-            boi,
+            bio,
             blog,
             login,
             html_url,
@@ -23,7 +24,11 @@ export class User extends Component {
         } = this.props.user;
         return (
             <div>
-                {following}
+                <div className="container">
+                    <div className="row">
+                        <div className="col-lg-4"></div>
+                    </div>
+                </div>
             </div>
         )
     }
