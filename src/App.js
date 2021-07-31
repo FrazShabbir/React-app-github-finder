@@ -61,7 +61,7 @@ class App extends Component {
   render() {
 
 
-    
+
     // declaring variables
     const { users, user, loading } = this.state;
 
@@ -83,7 +83,6 @@ class App extends Component {
                 </Fragment>
               )
             } />
-
             <Route exact path='/about' render={props => (
               <Fragment>
                 <About />
