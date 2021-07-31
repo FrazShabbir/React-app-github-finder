@@ -24,7 +24,6 @@ const Navbar = ({ icon, title }) => {
                     <Link to='/about'>Users</Link>
                 </li>
 
-
             </ul>
         </nav>
     )
