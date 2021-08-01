@@ -26,7 +26,9 @@ export class User extends Component {
             <div>
                 <div className="container">
                     <div className="row">
-                        <div className="col-lg-4"></div>
+                        <div className="col-lg-4">
+                            <h1>{id}</h1>
+                        </div>
                     </div>
                 </div>
             </div>
